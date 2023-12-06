@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         try {
-            Validate("", "ert45A_", "ert45A_");
+            Validate("java_skypro_go", "D_1hWiKjjP_9", "D_1hWiKjjP_9");
         } catch (WrongLoginException e) {
             System.out.println(e.getMessage());
         } catch (WrongPasswordException e) {
@@ -14,7 +14,7 @@ public class Main {
         if (!login.matches("^\\w{1,20}$")) {
             throw new WrongLoginException("Не верное значение логина");
         }
-        if (password.equals(confirmPassword) && !password.matches("^\\w{1,20}$")) {
+        if (!password.equals(confirmPassword) || !password.matches("^\\w{1,20}$")) {
             throw new WrongPasswordException("Не верное значение пароля");
         }
     }
