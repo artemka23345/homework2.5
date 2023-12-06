@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         try {
-            Validate("java_skypro_go", "D_1hWiKjjP_9", "D_1hWiKjjP_9");
+            validate("java_skypro_go", "D_1hWiKjjP_9", "D_1hWiKjjP_9");
         } catch (WrongLoginException e) {
             System.out.println(e.getMessage());
         } catch (WrongPasswordException e) {
@@ -9,8 +9,7 @@ public class Main {
         }
     }
 
-    public static void Validate(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
-
+    public static void validate(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
         if (!login.matches("^\\w{1,20}$")) {
             throw new WrongLoginException("Не верное значение логина");
         }
